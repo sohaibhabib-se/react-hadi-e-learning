@@ -38,7 +38,7 @@ const Accordion_ = () => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-    </Layout>
+    </Lay>
   )
 }
 

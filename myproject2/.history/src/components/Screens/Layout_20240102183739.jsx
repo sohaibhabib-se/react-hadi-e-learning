@@ -3,7 +3,6 @@ import { Col, Container, Offcanvas, Row } from 'react-bootstrap'
 import { LogIn, Menu } from 'react-feather'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../UI/Sidebar'
-import LayoutHeader from '../UI/LayoutHeader'
 
 const Layout = ({children}) => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -29,7 +28,7 @@ const Layout = ({children}) => {
           {/** Content */}
           <Col className='m-1'>
             {/** Header */}
-            {/* <Row>
+            <Row>
               <Col
                 className='d-flex justify-content-between align-items-center p-3 rounded'
                 style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}
@@ -48,8 +47,7 @@ const Layout = ({children}) => {
                   Login <LogIn size={15} />
                 </div>
               </Col>
-            </Row> */}
-            <LayoutHeader setShowSidebar={setShowSidebar} />
+            </Row>
 
             <Row>
               <Col className='p-1'>

@@ -15,8 +15,8 @@ const App = () => {
         <Route path="accordions" element={<Accordion_ />} />
         <Route path="cards" element={<Cards_ />} />
       </Route> */}
-      <Route path="/explore/accordions" element={<Accordion_ />} />
-      <Route path="/explore/cards" element={<Cards_ />} />
+      <Route path="accordions" element={<Accordion_ />} />
+        <Route path="cards" element={<Cards_ />} />
 
       <Route path="*" element={<p>Not Found :(</p>} />
     </Routes>

@@ -9,7 +9,7 @@ const Cards_ = () => {
       <PanelHeading title={'Cards_'} icon={<Box size={25} />} />
 
       <div className='d-flex justify-content-start align-items-start gap-3 mt-5'>
-      {[1,2,3].map( x => (<div className='card' style={{width: '18rem'}}>
+      {[1,2,3,4].map( x => (<div className='card' style={{width: '18rem'}}>
       <div className='card-body'>
         <h5 className='card-title'>Card title</h5>
         <h6 className='card-subtitle mb-2 text-muted'>Card subtitle</h6>
