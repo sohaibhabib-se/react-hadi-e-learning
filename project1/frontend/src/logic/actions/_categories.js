@@ -11,7 +11,7 @@ export const _useCategories = () => {
   const getCategories = async () => {
     setLoading(true)
     try {
-      const res = await axios.get('http://localhost:8000/category')
+      const res = await axios.get('/category')
       console.log(res)
       setCategories(res.data.categories)
     } catch (error) {

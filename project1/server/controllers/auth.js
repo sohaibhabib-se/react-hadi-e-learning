@@ -37,7 +37,7 @@ const login = async (req, res, next) => {
 
     let redirectTo = rest.role === "manager" ? "manager" : rest.role === "client" ? "client" : rest.role === "admin" ? "admin" : "agent";
 
-    res.status(200).json({ token, redirectTo, rest });
+    res.status(200).json({ token, redirectTo, user: rest });
   } catch (error) {
     next(error);
   }
@@ -55,7 +55,9 @@ const signOut = async (req, res, next) => {
 const currentUser = async (req, res, next) => {
   try {
     const _user = await User.findOne({ _id: req.user.id });
-    res.status(201).json({ msg: "hi", _user });
+    if (_user) {
+      return res.status(200).json({ ok: true });
+    }
   } catch (error) {
     next(error);
   }

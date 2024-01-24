@@ -20,6 +20,8 @@ const {
   assignTicket,
   assignToMe,
   allReponedTicketsOf_a_Agent,
+  ticketByIdClient,
+  ticketById,
 } = require("../controllers/tickets");
 
 const router = express.Router();
@@ -30,6 +32,7 @@ router.get("/", verifyToken, ticketBucket);
 
 router.get("/my-picks", verifyToken, isAgent, pickedTicketListOfAgent);
 router.get("/all-opens", verifyToken, isAgent, allReponedTicketsOf_a_Agent);
+router.get("/single/:_id", verifyToken, isAgent, ticketById);
 router.put("/pick", verifyToken, isAgent, pickTicket);
 router.put("/add-comments", verifyToken, isAgent, addComments);
 router.put("/handover-ticket", verifyToken, isAgent, handoverTicket);
@@ -45,6 +48,7 @@ router.put("/add-comment", verifyToken, isClient, addCommentByClient);
 router.get("/my-opens", verifyToken, isClient, ClientsOpenTickets);
 router.get("/my-in-progress", verifyToken, isClient, ClientsInProgressTickets);
 router.put("/reopen-ticket/:ticketId", verifyToken, isClient, reopenTicket);
+router.get("/single/:_id", verifyToken, isClient, ticketByIdClient);
 
 // -------------------- for both
 router.put("/update-to-resolved/:ticketId", verifyToken, updateTicketToResolved);
